@@ -5,5 +5,5 @@ http.createServer(function(request, response){
 	console.log("Dog is running.");
 	setTimeout(function(){
 		console.log("Dog is done.");
-	}, 5000);
+	}, 2000);
 }).listen(1337);
