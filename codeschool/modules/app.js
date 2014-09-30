@@ -1,3 +1,3 @@
-var hello = require('custom_hello.js');
+var httpClient = require('./httpClient.js')
 
-hello();
+httpClient.makeRequest("HI");

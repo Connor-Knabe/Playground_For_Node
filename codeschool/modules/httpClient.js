@@ -1,6 +1,6 @@
 var http = require('http');
 
-var makeRequest = function(message){
+exports.makeRequest = function(message){
 	var options = {
 		host: 'localhost',
 		port: 1337,
@@ -19,7 +19,6 @@ var makeRequest = function(message){
 	request.end();
 };
 
-makeRequest("HeY");
 
 
 
