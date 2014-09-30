@@ -8,7 +8,7 @@ http.createServer(function(request,response){
 
 	request.on('end', function(){
 		response.end('uploaded!');
-		
+		console.log("file uploaded");
 	});
 
 }).listen(1337);
