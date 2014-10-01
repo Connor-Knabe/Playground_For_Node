@@ -3,18 +3,14 @@ var http = require('http');
 var app = express.createServer();
 var url = require('url');
 var request = require('request');
-var OAuth= require('oauth').OAuth;
-
-
-
 
 
 
 console.log("HI");
-app.post('/tweets/:username', function(req, response){
+app.get('/tweets/:username', function(req, response){
 	var username = req.params.username;
 	options = {
-		protocol: "http:",
+		protocol: "https:",
 		host: 'api.twitter.com',
 		pathname: '/1.1/statuses/user_timeline.json',
 		query: { screen_name: username, count: 10}
