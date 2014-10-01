@@ -7,15 +7,16 @@ var request = require('request');
 
 
 console.log("HI");
-app.get('?apikey=:api', function(req, response){
+app.get('/apikey/:api', function(req, response){
 	var api = req.params.api;
 	options = {
-		protocol: "https:",
-		host: 'http://api.rottentomatoes.com',
+		protocol: "http:",
+		host: 'api.rottentomatoes.com',
 		pathname: '/api/public/v1.0/movies.json',
-		query: { api_key: api, count: 10}
+		query: { api_key: api}
 	}
 	var rottenUrl = url.format(options);
+	console.log(rottenUrl);
 	request(rottenUrl).pipe(response);
 });
 console.log("Ha");
