@@ -22,9 +22,8 @@ app.get('/apikey/:api/q/:query/page_limit/:limit', function(req, response){
 	console.log(rottenUrl);
 	//request(rottenUrl).pipe(response);
 	request(rottenUrl, function(err, res, body){
-		var results = JSON.parse(body);
-		response.render('movies.ejs'), {id: id, title: title});
-
-	})
+		var movies = JSON.parse(body);
+		response.render('movies.ejs', { movies: movies});
+	});
 });
 app.listen(1337);
