@@ -20,10 +20,7 @@ app.get('/apikey/:api/q/:query/page_limit/:limit', function(req, response){
 	}
 	var rottenUrl = url.format(options);
 	console.log(rottenUrl);
-	//request(rottenUrl).pipe(response);
-	request(rottenUrl, function(err, res, body){
-		var movies = JSON.parse(body);
-		response.render('movies.ejs', { movies: movies});
-	});
+	request(rottenUrl).pipe(response);
+
 });
 app.listen(1337);
